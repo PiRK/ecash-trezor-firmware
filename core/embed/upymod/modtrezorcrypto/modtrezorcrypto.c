@@ -157,6 +157,9 @@ STATIC const mp_rom_map_elem_t mp_module_trezorcrypto_globals_table[] = {
 #ifdef USE_MCU_ATTESTATION
     {MP_ROM_QSTR(MP_QSTR_mcu), MP_ROM_PTR(&mod_trezorcrypto_mcu_module)},
 #endif
+#if !BITCOIN_ONLY
+    {MP_ROM_QSTR(MP_QSTR_ecash), MP_ROM_PTR(&mod_trezorcrypto_ecash_module)},
+#endif
 };
 STATIC MP_DEFINE_CONST_DICT(mp_module_trezorcrypto_globals,
                             mp_module_trezorcrypto_globals_table);

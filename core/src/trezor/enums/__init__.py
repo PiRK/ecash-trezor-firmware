@@ -241,6 +241,7 @@ if TYPE_CHECKING:
         Tron = 24
         N4W1 = 25
         TouchWakeup = 26
+        Ecash = 27
 
     class SdProtectOperationType(IntEnum):
         DISABLE = 0
@@ -759,5 +760,7 @@ if TYPE_CHECKING:
         BenchmarkNames = 9101
         BenchmarkRun = 9102
         BenchmarkResult = 9103
-        TelemetryGet = 1100
-        Telemetry = 1101
+        TelemetryGet = 2214
+        Telemetry = 2215
+        EcashSignStake = 1100
+        EcashStakeSignature = 1101

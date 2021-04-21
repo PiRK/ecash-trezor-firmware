@@ -396,6 +396,10 @@ enum MessageType {
     // 2 indexes reserved for (un)delegation. PR in review.
     MessageType_TronWithdrawBalance = 2213 [(wire_in) = true];
 
+    // eCash
+    MessageType_EcashSignStake = 1100 [(wire_in) = true];
+    MessageType_EcashStakeSignature = 1101 [(wire_out) = true];
+
     // Benchmark
     MessageType_BenchmarkListNames = 9100 [(bitcoin_only) = true];
     MessageType_BenchmarkNames = 9101 [(bitcoin_only) = true];
@@ -403,6 +407,6 @@ enum MessageType {
     MessageType_BenchmarkResult = 9103 [(bitcoin_only) = true];
 
     // Telemetry
-    MessageType_TelemetryGet = 1100 [(bitcoin_only) = true, (wire_in) = true];
-    MessageType_Telemetry = 1101 [(bitcoin_only) = true, (wire_out) = true];
+    MessageType_TelemetryGet = 2214 [(bitcoin_only) = true, (wire_in) = true];
+    MessageType_Telemetry = 2215 [(bitcoin_only) = true, (wire_out) = true];
 }

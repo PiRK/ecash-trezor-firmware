@@ -240,6 +240,10 @@ def _find_message_handler_module(msg_type: int) -> str:
         if msg_type == MessageType.SolanaVerifyMessage:
             return "apps.solana.verify_message"
 
+        # eCash
+        if msg_type == MessageType.EcashSignStake:
+            return "apps.ecash.sign_stake"
+
     raise ValueError
 
 

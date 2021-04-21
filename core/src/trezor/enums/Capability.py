@@ -12,7 +12,7 @@ PassphraseEntry = 17
 Translations = 19
 Brightness = 20
 Haptic = 21
-BLE = 22
+BLE = 28
 NFC = 23
 N4W1 = 25
 TouchWakeup = 26
@@ -29,4 +29,5 @@ if not utils.BITCOIN_ONLY:
     Tezos = 13
     U2F = 14
     Solana = 18
+    Ecash = 22
     Tron = 24

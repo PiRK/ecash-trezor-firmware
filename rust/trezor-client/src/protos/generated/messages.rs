@@ -616,9 +616,9 @@ pub enum MessageType {
     // @@protoc_insertion_point(enum_value:hw.trezor.messages.MessageType.MessageType_BenchmarkResult)
     MessageType_BenchmarkResult = 9103,
     // @@protoc_insertion_point(enum_value:hw.trezor.messages.MessageType.MessageType_TelemetryGet)
-    MessageType_TelemetryGet = 1100,
+    MessageType_TelemetryGet = 2214,
     // @@protoc_insertion_point(enum_value:hw.trezor.messages.MessageType.MessageType_Telemetry)
-    MessageType_Telemetry = 1101,
+    MessageType_Telemetry = 2215,
 }
 
 impl ::protobuf::Enum for MessageType {
@@ -924,8 +924,8 @@ impl ::protobuf::Enum for MessageType {
             9101 => ::std::option::Option::Some(MessageType::MessageType_BenchmarkNames),
             9102 => ::std::option::Option::Some(MessageType::MessageType_BenchmarkRun),
             9103 => ::std::option::Option::Some(MessageType::MessageType_BenchmarkResult),
-            1100 => ::std::option::Option::Some(MessageType::MessageType_TelemetryGet),
-            1101 => ::std::option::Option::Some(MessageType::MessageType_Telemetry),
+            2214 => ::std::option::Option::Some(MessageType::MessageType_TelemetryGet),
+            2215 => ::std::option::Option::Some(MessageType::MessageType_Telemetry),
             _ => ::std::option::Option::None
         }
     }

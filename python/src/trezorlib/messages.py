@@ -271,6 +271,7 @@ class Capability(IntEnum):
     Tron = 24
     N4W1 = 25
     TouchWakeup = 26
+    Ecash = 27
 
 
 class SdProtectOperationType(IntEnum):
@@ -819,12 +820,14 @@ class MessageType(IntEnum):
     TronWithdrawUnfreeze = 2209
     TronVoteWitnessContract = 2210
     TronWithdrawBalance = 2213
+    EcashSignStake = 1100
+    EcashStakeSignature = 1101
     BenchmarkListNames = 9100
     BenchmarkNames = 9101
     BenchmarkRun = 9102
     BenchmarkResult = 9103
-    TelemetryGet = 1100
-    Telemetry = 1101
+    TelemetryGet = 2214
+    Telemetry = 2215
 
 
 class BenchmarkListNames(protobuf.MessageType):
@@ -4906,6 +4909,58 @@ class EthereumDisplayFormatInfo(protobuf.MessageType):
         self.intent = intent
 
 
+class EcashSignStake(protobuf.MessageType):
+    MESSAGE_WIRE_TYPE = 1100
+    FIELDS = {
+        1: protobuf.Field("address_n", "uint32", repeated=True, required=False, default=None),
+        2: protobuf.Field("txid", "bytes", repeated=False, required=True),
+        3: protobuf.Field("index", "uint32", repeated=False, required=True),
+        4: protobuf.Field("amount", "uint64", repeated=False, required=True),
+        5: protobuf.Field("height", "uint32", repeated=False, required=True),
+        6: protobuf.Field("is_coinbase", "bool", repeated=False, required=True),
+        8: protobuf.Field("expiration_time", "uint64", repeated=False, required=True),
+        9: protobuf.Field("master_pubkey", "bytes", repeated=False, required=True),
+    }
+
+    def __init__(
+            self,
+            *,
+            txid: "bytes",
+            index: "int",
+            amount: "int",
+            height: "int",
+            is_coinbase: "bool",
+            expiration_time: "int",
+            master_pubkey: "bytes",
+            address_n: Optional[Sequence["int"]] = None,
+    ) -> None:
+        self.address_n: Sequence["int"] = address_n if address_n is not None else []
+        self.txid = txid
+        self.index = index
+        self.amount = amount
+        self.height = height
+        self.is_coinbase = is_coinbase
+        self.expiration_time = expiration_time
+        self.master_pubkey = master_pubkey
+
+
+class EcashStakeSignature(protobuf.MessageType):
+    MESSAGE_WIRE_TYPE = 1101
+    FIELDS = {
+        1: protobuf.Field("pubkey", "bytes", repeated=False, required=True),
+        2: protobuf.Field("signature", "bytes", repeated=False, required=True),
+    }
+
+    def __init__(
+            self,
+            *,
+            pubkey: "bytes",
+            signature: "bytes",
+    ) -> None:
+        self.pubkey = pubkey
+        self.signature = signature
+
+
 class EosGetPublicKey(protobuf.MessageType):
     MESSAGE_WIRE_TYPE = 600
     FIELDS = {
@@ -8804,11 +8859,11 @@ class StellarSCValMapEntry(protobuf.MessageType):
 
 
 class TelemetryGet(protobuf.MessageType):
-    MESSAGE_WIRE_TYPE = 1100
+    MESSAGE_WIRE_TYPE = 2214
 
 
 class Telemetry(protobuf.MessageType):
-    MESSAGE_WIRE_TYPE = 1101
+    MESSAGE_WIRE_TYPE = 2215
     FIELDS = {
         1: protobuf.Field("min_temp_c", "sint32", repeated=False, required=False, default=None),
         2: protobuf.Field("max_temp_c", "sint32", repeated=False, required=False, default=None),

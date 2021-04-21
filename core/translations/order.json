@@ -1260,5 +1260,13 @@
   "1258": "words__arguments",
   "1259": "words__authorization",
   "1260": "words__comm_continue",
-  "1261": "words__function"
+  "1261": "words__function",
+  "1262": "instructions__tap_to_continue",
+  "1263": "ecash__block_height",
+  "1264": "ecash__confirm_sign_stake",
+  "1265": "ecash__expiration_time",
+  "1266": "ecash__is_coinbase",
+  "1267": "ecash__master_pubkey",
+  "1268": "ecash__output_index",
+  "1269": "ecash__transaction_id"
 }

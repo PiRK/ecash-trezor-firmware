@@ -101,8 +101,8 @@ BenchmarkListNames = 9100
 BenchmarkNames = 9101
 BenchmarkRun = 9102
 BenchmarkResult = 9103
-TelemetryGet = 1100
-Telemetry = 1101
+TelemetryGet = 2214
+Telemetry = 2215
 if __debug__:
     DebugLinkDecision = 100
     DebugLinkGetState = 101
@@ -303,3 +303,5 @@ if not utils.BITCOIN_ONLY:
     TronWithdrawUnfreeze = 2209
     TronVoteWitnessContract = 2210
     TronWithdrawBalance = 2213
+    EcashSignStake = 1100
+    EcashStakeSignature = 1101
